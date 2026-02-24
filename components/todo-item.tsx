@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { Checkbox } from "@/components/ui/checkbox"
-import { Button } from "@/components/ui/button"
-import { Trash2 } from "lucide-react"
-import { cn } from "@/lib/utils"
-import type { Todo } from "@/hooks/use-todos"
+import { Checkbox } from "@/components/ui/checkbox";
+import { Button } from "@/components/ui/button";
+import { Trash2 } from "lucide-react";
+import { cn } from "@/lib/utils";
+import type { Todo } from "@/hooks/use-todos";
 
 interface TodoItemProps {
-  todo: Todo
-  onToggle: (id: string) => void
-  onDelete: (id: string) => void
+  todo: Todo;
+  onToggle: (id: string) => void;
+  onDelete: (id: string) => void;
 }
 
 export function TodoItem({ todo, onToggle, onDelete }: TodoItemProps) {
@@ -24,7 +24,7 @@ export function TodoItem({ todo, onToggle, onDelete }: TodoItemProps) {
       <span
         className={cn(
           "flex-1 text-sm leading-relaxed transition-all",
-          todo.completed && "text-muted-foreground line-through"
+          todo.completed && "text-muted-foreground line-through",
         )}
       >
         {todo.title}
@@ -39,5 +39,5 @@ export function TodoItem({ todo, onToggle, onDelete }: TodoItemProps) {
         <Trash2 className="h-4 w-4" />
       </Button>
     </div>
-  )
+  );
 }

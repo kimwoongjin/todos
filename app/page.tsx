@@ -1,5 +1,5 @@
-import { TodoList } from "@/components/todo-list"
-import { CheckSquare } from "lucide-react"
+import { TodoList } from "@/components/todo-list";
+import { CheckSquare } from "lucide-react";
 
 export default function Page() {
   return (
@@ -12,5 +12,5 @@ export default function Page() {
         <TodoList />
       </main>
     </div>
-  )
+  );
 }

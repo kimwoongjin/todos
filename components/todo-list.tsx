@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import { useTodos } from "@/hooks/use-todos"
-import { TodoItem } from "@/components/todo-item"
-import { AddTodoForm } from "@/components/add-todo-form"
-import { ListChecks } from "lucide-react"
+import { useTodos } from "@/hooks/use-todos";
+import { TodoItem } from "@/components/todo-item";
+import { AddTodoForm } from "@/components/add-todo-form";
+import { ListChecks } from "lucide-react";
 
 export function TodoList() {
-  const { activeTodos, completedTodos, addTodo, toggleTodo, deleteTodo, hydrated } = useTodos()
-  const isEmpty = activeTodos.length === 0 && completedTodos.length === 0
+  const { activeTodos, completedTodos, addTodo, toggleTodo, deleteTodo, hydrated } = useTodos();
+  const isEmpty = activeTodos.length === 0 && completedTodos.length === 0;
 
   if (!hydrated) {
     return (
       <div className="flex flex-1 items-center justify-center py-12">
         <div className="h-6 w-6 animate-spin rounded-full border-2 border-primary border-t-transparent" />
       </div>
-    )
+    );
   }
 
   return (
@@ -33,9 +33,7 @@ export function TodoList() {
             </div>
             <div>
               <p className="text-sm font-medium text-foreground">No todos yet</p>
-              <p className="text-sm text-muted-foreground">
-                Add your first todo to get started
-              </p>
+              <p className="text-sm text-muted-foreground">Add your first todo to get started</p>
             </div>
           </div>
         ) : (
@@ -46,12 +44,7 @@ export function TodoList() {
                   Active ({activeTodos.length})
                 </p>
                 {activeTodos.map((todo) => (
-                  <TodoItem
-                    key={todo.id}
-                    todo={todo}
-                    onToggle={toggleTodo}
-                    onDelete={deleteTodo}
-                  />
+                  <TodoItem key={todo.id} todo={todo} onToggle={toggleTodo} onDelete={deleteTodo} />
                 ))}
               </div>
             )}
@@ -62,12 +55,7 @@ export function TodoList() {
                   Completed ({completedTodos.length})
                 </p>
                 {completedTodos.map((todo) => (
-                  <TodoItem
-                    key={todo.id}
-                    todo={todo}
-                    onToggle={toggleTodo}
-                    onDelete={deleteTodo}
-                  />
+                  <TodoItem key={todo.id} todo={todo} onToggle={toggleTodo} onDelete={deleteTodo} />
                 ))}
               </div>
             )}
@@ -76,9 +64,9 @@ export function TodoList() {
       </div>
 
       {/* Mobile: form fixed at bottom */}
-      <div className="fixed inset-x-0 bottom-0 border-t border-border bg-background px-4 pb-[env(safe-area-inset-bottom,8px)] pt-3 md:hidden">
+      <div className="fixed inset-x-0 bottom-2 border-t border-border bg-background px-4 pb-[env(safe-area-inset-bottom,8px)] pt-3 md:hidden">
         <AddTodoForm onAdd={addTodo} />
       </div>
     </>
-  )
+  );
 }
