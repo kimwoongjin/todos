@@ -64,7 +64,7 @@ export function TodoList() {
       </div>
 
       {/* Mobile: form fixed at bottom */}
-      <div className="fixed inset-x-0 bottom-2 border-t border-border bg-background px-4 pb-[env(safe-area-inset-bottom,8px)] pt-3 md:hidden">
+      <div className="fixed inset-x-0 bottom-0 border-t border-border bg-background px-4 py-3 md:hidden">
         <AddTodoForm onAdd={addTodo} />
       </div>
     </>
